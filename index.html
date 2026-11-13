@@ -34,11 +34,11 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-text">
-      <p class="eyebrow">The official website of</p>
+      <p class="eyebrow">The extremely official, paw-certified website of</p>
       <h1 class="wobble-title" aria-label="Frost">
         <span>F</span><span>R</span><span>O</span><span>S</span><span>T</span>
       </h1>
-      <p class="tagline">Persian. Floof. Professional Napper.<br />Part-time Bird Inspector. Never once caught a bird.</p>
+      <p class="tagline">90% fur. 10% attitude. 0% cardio.<br />Professional napper (unpaid, overworked). Part-time bird inspector with a perfect record: zero birds caught, all birds judged.</p>
       <button class="meow-btn" id="meowBtn" type="button">
         <span class="speaker">🔊</span> Hear His Majesty Speak
       </button>
@@ -109,7 +109,7 @@
     <h2 class="section-title">Bird Surveillance Unit <span class="scribble">(glass division)</span></h2>
     <div class="split">
       <div class="phone">
-        <video src="assets/video/frost-video.mp4" poster="assets/video/frost-video-poster.jpg" controls playsinline loop preload="metadata"></video>
+        <video src="assets/video/frost-video.mp4" poster="assets/video/frost-video-poster.jpg" controls muted autoplay playsinline loop preload="metadata"></video>
       </div>
       <div class="dossier">
         <p class="stamp">CLASSIFIED</p>
@@ -138,11 +138,28 @@
     <p class="lede">Birds and dogs get the glass treatment. But bees and butterflies? <b>Fair game.</b> And spiders? <b>Frost shows no mercy.</b> Help him hunt: click the critters before they get away.</p>
     <div class="hunt-grid">
       <div class="meadow" id="meadow" aria-label="Bug-chasing game">
+        <div class="scenery" aria-hidden="true">
+          <div class="sun"><span class="sun-face">◕‿◕</span></div>
+          <div class="cloud c1"></div>
+          <div class="cloud c2"></div>
+          <div class="cloud c3"></div>
+          <svg class="mountains" viewBox="0 0 800 200" preserveAspectRatio="none">
+            <path d="M0 200 L0 120 L90 60 L150 95 L240 25 L320 90 L400 45 L470 85 L560 20 L640 80 L720 50 L800 95 L800 200 Z" fill="#a9c4dc"/>
+            <path d="M240 25 L268 45 L252 42 L240 52 L228 43 L214 47 Z M560 20 L590 42 L573 39 L560 50 L548 40 L532 44 Z M400 45 L420 60 L408 58 L400 65 L392 58 L382 61 Z" fill="#fff"/>
+          </svg>
+          <svg class="hills" viewBox="0 0 800 200" preserveAspectRatio="none">
+            <path d="M0 200 L0 90 Q120 30 260 80 T520 70 T800 60 L800 200 Z" fill="#9bd26a"/>
+            <path d="M0 200 L0 130 Q160 80 330 120 T640 110 T800 105 L800 200 Z" fill="#7cc04a"/>
+          </svg>
+          <div class="grass"></div>
+          <div class="tree t1"><div class="crown"></div><div class="trunk"></div></div>
+          <div class="tree t2"><div class="crown"></div><div class="trunk"></div></div>
+        </div>
         <div class="meadow-hud">
           <span>Caught: <b id="caught">0</b></span>
           <span id="huntMsg">Paws ready…</span>
         </div>
-        <div class="flowers" aria-hidden="true">🌼🌷🌸🌼🌻🌷🌼🌸🌻🌷🌼</div>
+        <div class="flowers" aria-hidden="true"><span style="--d:0.00s">🌼</span><span style="--d:0.17s">🌷</span><span style="--d:0.34s">🌸</span><span style="--d:0.51s">🌼</span><span style="--d:0.68s">🌻</span><span style="--d:0.85s">🌷</span><span style="--d:1.02s">🌼</span><span style="--d:1.19s">🌸</span><span style="--d:1.36s">🌻</span><span style="--d:1.53s">🌷</span><span style="--d:1.70s">🌼</span></div>
       </div>
       <figure class="polaroid tilt-r hunter-pic">
         <img src="assets/photos/frost-16.jpg" alt="Frost sitting on the balcony looking alert" loading="lazy" />
