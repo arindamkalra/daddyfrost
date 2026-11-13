@@ -88,26 +88,6 @@ function spawnZ() {
 );
 resetIdle();
 
-/* ---------- Dog door ---------- */
-const doorFrame = $(".door-frame");
-const doorStatus = $("#doorStatus");
-const doorLines = [
-  "A DOG. Frost has seen it. Frost is staying exactly where he is.",
-  "Intense staring initiated. Door remains an excellent shield.",
-  "Frost puffs up to 300% floof. The dog does not notice.",
-  "Frost reports: 'I could take him.' Frost does not take him.",
-];
-let doorLine = 0;
-$("#door").addEventListener("click", () => {
-  const open = doorFrame.classList.toggle("open");
-  if (open) {
-    doorStatus.textContent = doorLines[doorLine++ % doorLines.length];
-  } else {
-    doorStatus.textContent = "Door closed. Frost declares victory. 🏆";
-    play($("#meow3"));
-  }
-});
-
 /* ---------- Bee & butterfly hunt ---------- */
 const meadow = $("#meadow");
 const caughtEl = $("#caught");
