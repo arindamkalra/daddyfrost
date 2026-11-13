@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frost: Professional Napper, Part-Time Bird Inspector</title>
+  <meta name="description" content="The official website of Frost, a Persian cat of great floof and very little ambition." />
+  <meta property="og:title" content="Frost: Professional Napper" />
+  <meta property="og:description" content="Sleeps a lot. Watches birds through glass. Watches dogs through doors. Chases bees. Grumpy after naps." />
+  <meta property="og:image" content="assets/photos/frost-11.jpg" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sounds. To use Frost's real voice, replace assets/audio/frost-voice.mp3 with your own recording (same file name). -->
+  <audio id="voice" src="assets/audio/frost-voice.mp3" preload="auto"></audio>
+  <audio id="meow2" src="assets/audio/meow-2.mp3" preload="auto"></audio>
+  <audio id="meow3" src="assets/audio/meow-3.mp3" preload="auto"></audio>
+
+  <header class="nav">
+    <a href="#top" class="logo">FROST<span class="paw">🐾</span></a>
+    <nav>
+      <a href="#day">His Day</a>
+      <a href="#birds">Birds</a>
+      <a href="#dogs">Dogs</a>
+      <a href="#hunt">The Hunt</a>
+      <a href="#grumpy">Grumpy-o-Meter</a>
+      <a href="#archive">Archive</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <p class="eyebrow">The official website of</p>
+      <h1 class="wobble-title" aria-label="Frost">
+        <span>F</span><span>R</span><span>O</span><span>S</span><span>T</span>
+      </h1>
+      <p class="tagline">Persian. Floof. Professional Napper.<br />Part-time Bird Inspector. Never once caught a bird.</p>
+      <button class="meow-btn" id="meowBtn" type="button">
+        <span class="speaker">🔊</span> Hear His Majesty Speak
+      </button>
+      <p class="hint">(he only says one thing, and he means it)</p>
+    </div>
+
+    <div class="hero-photo">
+      <div class="polaroid tilt-r" id="heroCat" role="button" tabindex="0" aria-label="Frost sitting like a tiny old man. Click to make him meow.">
+        <img src="assets/photos/frost-11.jpg" alt="Frost sitting upright on the bed like a tiny old man" />
+        <p class="caption">sits like a retired uncle</p>
+        <div class="bubble" id="heroBubble">mrrp.</div>
+      </div>
+      <div class="sticker sticker-a">DO NOT<br />DISTURB</div>
+      <div class="sticker sticker-b">200%<br />floof</div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>💤 sleeps 16 hours a day</span><span>🐦 birds: 0</span><span>🐕 dogs fought: 0</span><span>🐝 bees chased: many</span><span>😾 grumpy after naps</span><span>🦁 Persian royalty</span><span>💤 sleeps 16 hours a day</span><span>🐦 birds: 0</span><span>🐕 dogs fought: 0</span><span>🐝 bees chased: many</span><span>😾 grumpy after naps</span><span>🦁 Persian royalty</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat">
+      <p class="stat-num" id="sleepCounter">0.0</p>
+      <p class="stat-label">hours slept today<br /><small>(live, still counting)</small></p>
+    </div>
+    <div class="stat">
+      <p class="stat-num">0</p>
+      <p class="stat-label">birds caught<br /><small>(glass is undefeated)</small></p>
+    </div>
+    <div class="stat">
+      <p class="stat-num">0</p>
+      <p class="stat-label">dogs confronted<br /><small>(glared at: 47)</small></p>
+    </div>
+    <div class="stat">
+      <p class="stat-num" id="bugStat">0</p>
+      <p class="stat-label">bugs chased on this page<br /><small>(scroll down & help)</small></p>
+    </div>
+  </section>
+
+  <!-- A DAY IN THE LIFE -->
+  <section class="section" id="day">
+    <h2 class="section-title">A Day in the Life <span class="scribble">(it's mostly naps)</span></h2>
+    <div class="timeline">
+      <article class="t-card tilt-l">
+        <img src="assets/photos/frost-03.jpg" alt="Frost loafing with a deeply unimpressed face" loading="lazy" />
+        <p class="time">07:00</p>
+        <p>Wakes up. Is immediately annoyed about it.</p>
+      </article>
+      <article class="t-card tilt-r">
+        <img src="assets/photos/frost-15.jpg" alt="Frost curled up asleep on the bed in the sun" loading="lazy" />
+        <p class="time">07:15</p>
+        <p>Breakfast. Exhausted by breakfast. Back to bed.</p>
+      </article>
+      <article class="t-card tilt-l">
+        <img src="assets/photos/frost-04.jpg" alt="Frost curled on a chair by a big window with mountains outside" loading="lazy" />
+        <p class="time">10:00</p>
+        <p>Window shift. Supervises the mountains. Mountains comply.</p>
+      </article>
+      <article class="t-card tilt-r">
+        <img src="assets/photos/frost-06.jpg" alt="Frost napping on top of his cat tower" loading="lazy" />
+        <p class="time">12:00</p>
+        <p>Nap #3, in the penthouse suite.</p>
+      </article>
+      <article class="t-card tilt-l">
+        <img src="assets/photos/frost-12.jpg" alt="Frost sitting upright with his legs out" loading="lazy" />
+        <p class="time">14:00</p>
+        <p>Sits like a tiny old man. Contemplates the news.</p>
+      </article>
+      <article class="t-card tilt-r">
+        <img src="assets/photos/frost-17.jpg" alt="Frost on the balcony looking out at the hills" loading="lazy" />
+        <p class="time">16:00</p>
+        <p>Balcony patrol. Scans the hills for butterflies.</p>
+      </article>
+      <article class="t-card tilt-l">
+        <img src="assets/photos/frost-13.jpg" alt="Frost sprawled flat on the floor" loading="lazy" />
+        <p class="time">18:00</p>
+        <p>Floor nap. Any floor. All floors are beds.</p>
+      </article>
+      <article class="t-card tilt-r">
+        <img src="assets/photos/frost-09.jpg" alt="Frost standing on the bed with his tail up" loading="lazy" />
+        <p class="time">03:00</p>
+        <p>Zoomies. Nobody knows why. Not even Frost.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- BIRDS -->
+  <section class="section birds" id="birds">
+    <h2 class="section-title">Bird Surveillance Unit <span class="scribble">(glass division)</span></h2>
+    <div class="split">
+      <div class="phone">
+        <video src="assets/video/frost-video.mp4" poster="assets/video/frost-video-poster.jpg" controls playsinline loop preload="metadata"></video>
+      </div>
+      <div class="dossier">
+        <p class="stamp">CLASSIFIED</p>
+        <h3>Operation: Glass Wall</h3>
+        <ul>
+          <li><b>Agent:</b> Frost</li>
+          <li><b>Target:</b> every bird, ever</li>
+          <li><b>Method:</b> stare intensely through the window</li>
+          <li><b>Distance to target:</b> one window pane, always</li>
+          <li><b>Birds caught to date:</b> 0</li>
+          <li><b>Birds aware of his existence:</b> also 0</li>
+        </ul>
+        <div class="window" aria-hidden="true">
+          <div class="pane"></div><div class="pane"></div><div class="pane"></div><div class="pane"></div>
+          <span class="fly-bird">🐦</span>
+          <span class="window-cat">🐱</span>
+        </div>
+        <p class="note">He could go outside. He has chosen not to. Very strategic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOGS -->
+  <section class="section dogs" id="dogs">
+    <h2 class="section-title">Neighbourhood Watch <span class="scribble">(dog division)</span></h2>
+    <div class="split">
+      <div class="door-wrap">
+        <div class="door-frame">
+          <div class="behind-door">
+            <span class="dog" id="dog">🐕</span>
+          </div>
+          <button class="door" id="door" type="button" aria-label="Open the door a crack">
+            <span class="knob"></span>
+            <span class="door-sign">PEEK<br />👀</span>
+          </button>
+        </div>
+        <p class="door-status" id="doorStatus">Click the door. Frost will supervise from a safe distance.</p>
+      </div>
+      <div class="photo-pair">
+        <figure class="polaroid tilt-l">
+          <img src="assets/photos/frost-02.jpg" alt="Frost lying on a mat right by the door" loading="lazy" />
+          <figcaption class="caption">guarding the door (from inside)</figcaption>
+        </figure>
+        <figure class="polaroid tilt-r">
+          <img src="assets/photos/frost-14.jpg" alt="Frost lying near the door watching" loading="lazy" />
+          <figcaption class="caption">heard a bark. did not move.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- HUNT GAME -->
+  <section class="section hunt" id="hunt">
+    <h2 class="section-title">The Great Hunter <span class="scribble">(bees & butterflies only)</span></h2>
+    <p class="lede">Birds and dogs get the glass treatment. But bees and butterflies? <b>Fair game.</b> Help Frost hunt: click the bugs before they get away.</p>
+    <div class="hunt-grid">
+      <div class="meadow" id="meadow" aria-label="Bug-chasing game">
+        <div class="meadow-hud">
+          <span>Caught: <b id="caught">0</b></span>
+          <span id="huntMsg">Paws ready…</span>
+        </div>
+        <div class="flowers" aria-hidden="true">🌼🌷🌸🌼🌻🌷🌼🌸🌻🌷🌼</div>
+      </div>
+      <figure class="polaroid tilt-r hunter-pic">
+        <img src="assets/photos/frost-16.jpg" alt="Frost sitting on the balcony looking alert" loading="lazy" />
+        <figcaption class="caption">the hunter, waiting for a bee</figcaption>
+      </figure>
+    </div>
+    <p class="note center">Note: every bug Frost catches is released immediately. He's a chaser, not a finisher.</p>
+  </section>
+
+  <!-- GRUMPY METER -->
+  <section class="section grumpy" id="grumpy">
+    <h2 class="section-title">Post-Nap Grumpy-o-Meter</h2>
+    <p class="lede">Frost has just woken up. Drag the slider to see when it's safe to approach.</p>
+    <div class="grumpy-box">
+      <div class="grumpy-photo polaroid tilt-l">
+        <img id="grumpyImg" src="assets/photos/frost-03.jpg" alt="Frost's current mood" />
+      </div>
+      <div class="grumpy-controls">
+        <div class="gauge">
+          <div class="gauge-fill" id="gaugeFill"></div>
+          <span class="gauge-label">GRUMPINESS</span>
+        </div>
+        <label for="wakeSlider" class="slider-label">Minutes since he woke up: <b id="minutes">0</b></label>
+        <input type="range" id="wakeSlider" min="0" max="120" value="0" />
+        <p class="mood-title" id="moodTitle">DANGER ZONE</p>
+        <p class="mood-text" id="moodText">Just woke up. Do not speak. Do not breathe loudly. Do not exist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section class="section" id="archive">
+    <h2 class="section-title">The Frost Archives <span class="scribble">(click to zoom)</span></h2>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <footer class="footer">
+    <p class="big-paw" id="footerPaw" role="button" tabindex="0" aria-label="Pet Frost">🐾</p>
+    <p>Made with love and zero help from Frost, who was asleep the whole time.</p>
+    <p class="tiny">Click the paw for a surprise. He might be in a good mood. He might not.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+    <figure>
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

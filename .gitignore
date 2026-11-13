@@ -1,0 +1,10 @@
+# Original full-size photos and video stay on your Mac only.
+# The website uses the web-sized copies in assets/.
+/*.jpg
+/*.jpeg
+/*.JPG
+/*.JPEG
+/*.MOV
+/*.mov
+.tmp/
+.DS_Store
