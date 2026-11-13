@@ -72,6 +72,7 @@ button { font: inherit; cursor: pointer; }
   25% { transform: translateY(-8px) rotate(-4deg); }
   75% { transform: translateY(3px) rotate(3deg); }
 }
+.eyebrow-aside { font-size: 1.15rem; opacity: .85; }
 .tagline { font-size: 1.2rem; max-width: 32ch; margin-bottom: 1.8rem; }
 
 .meow-btn {
@@ -322,6 +323,8 @@ input[type=range]::-moz-range-thumb { width: 34px; height: 34px; border-radius: 
   .photo-pair { grid-template-columns: 1fr; }
   .photo-pair .polaroid:last-child { margin-top: 0; }
   .meadow { height: 360px; }
+  .flowers { font-size: 1.35rem; }
+  .sun { width: 60px; height: 60px; right: 8%; }
   .grumpy-box { padding: 1.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
