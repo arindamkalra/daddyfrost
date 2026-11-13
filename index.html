@@ -24,11 +24,10 @@
   <header class="nav">
     <a href="#top" class="logo">FROST<span class="paw">🐾</span></a>
     <nav>
-      <a href="#day">His Day</a>
+      <a href="#grumpy">Grumpy-o-Meter</a>
       <a href="#birds">Birds</a>
       <a href="#dogs">Dogs</a>
       <a href="#hunt">The Hunt</a>
-      <a href="#grumpy">Grumpy-o-Meter</a>
       <a href="#archive">Archive</a>
     </nav>
   </header>
@@ -61,7 +60,7 @@
   <!-- MARQUEE -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>💤 sleeps 16 hours a day</span><span>🐦 birds: 0</span><span>🐕 dogs fought: 0</span><span>🐝 bees chased: many</span><span>😾 grumpy after naps</span><span>🦁 Persian royalty</span><span>💤 sleeps 16 hours a day</span><span>🐦 birds: 0</span><span>🐕 dogs fought: 0</span><span>🐝 bees chased: many</span><span>😾 grumpy after naps</span><span>🦁 Persian royalty</span>
+      <span>💤 sleeps 16 hours a day</span><span>🐦 birds: 0</span><span>🐕 dogs fought: 0</span><span>🐝 bees chased: many</span><span>🕷️ spiders: no survivors</span><span>😾 grumpy after naps</span><span>🦁 Persian royalty</span><span>💤 sleeps 16 hours a day</span><span>🐦 birds: 0</span><span>🐕 dogs fought: 0</span><span>🐝 bees chased: many</span><span>🕷️ spiders: no survivors</span><span>😾 grumpy after naps</span><span>🦁 Persian royalty</span>
     </div>
   </div>
 
@@ -85,50 +84,24 @@
     </div>
   </section>
 
-  <!-- A DAY IN THE LIFE -->
-  <section class="section" id="day">
-    <h2 class="section-title">A Day in the Life <span class="scribble">(it's mostly naps)</span></h2>
-    <div class="timeline">
-      <article class="t-card tilt-l">
-        <img src="assets/photos/frost-03.jpg" alt="Frost loafing with a deeply unimpressed face" loading="lazy" />
-        <p class="time">07:00</p>
-        <p>Wakes up. Is immediately annoyed about it.</p>
-      </article>
-      <article class="t-card tilt-r">
-        <img src="assets/photos/frost-15.jpg" alt="Frost curled up asleep on the bed in the sun" loading="lazy" />
-        <p class="time">07:15</p>
-        <p>Breakfast. Exhausted by breakfast. Back to bed.</p>
-      </article>
-      <article class="t-card tilt-l">
-        <img src="assets/photos/frost-04.jpg" alt="Frost curled on a chair by a big window with mountains outside" loading="lazy" />
-        <p class="time">10:00</p>
-        <p>Window shift. Supervises the mountains. Mountains comply.</p>
-      </article>
-      <article class="t-card tilt-r">
-        <img src="assets/photos/frost-06.jpg" alt="Frost napping on top of his cat tower" loading="lazy" />
-        <p class="time">12:00</p>
-        <p>Nap #3, in the penthouse suite.</p>
-      </article>
-      <article class="t-card tilt-l">
-        <img src="assets/photos/frost-12.jpg" alt="Frost sitting upright with his legs out" loading="lazy" />
-        <p class="time">14:00</p>
-        <p>Sits like a tiny old man. Contemplates the news.</p>
-      </article>
-      <article class="t-card tilt-r">
-        <img src="assets/photos/frost-17.jpg" alt="Frost on the balcony looking out at the hills" loading="lazy" />
-        <p class="time">16:00</p>
-        <p>Balcony patrol. Scans the hills for butterflies.</p>
-      </article>
-      <article class="t-card tilt-l">
-        <img src="assets/photos/frost-13.jpg" alt="Frost sprawled flat on the floor" loading="lazy" />
-        <p class="time">18:00</p>
-        <p>Floor nap. Any floor. All floors are beds.</p>
-      </article>
-      <article class="t-card tilt-r">
-        <img src="assets/photos/frost-09.jpg" alt="Frost standing on the bed with his tail up" loading="lazy" />
-        <p class="time">03:00</p>
-        <p>Zoomies. Nobody knows why. Not even Frost.</p>
-      </article>
+  <!-- GRUMPY METER -->
+  <section class="section grumpy" id="grumpy">
+    <h2 class="section-title">Post-Nap Grumpy-o-Meter</h2>
+    <p class="lede">Frost has just woken up. Drag the slider to see when it's safe to approach.</p>
+    <div class="grumpy-box">
+      <div class="grumpy-photo polaroid tilt-l">
+        <img id="grumpyImg" src="assets/photos/frost-03.jpg" alt="Frost's current mood" />
+      </div>
+      <div class="grumpy-controls">
+        <div class="gauge">
+          <div class="gauge-fill" id="gaugeFill"></div>
+          <span class="gauge-label">GRUMPINESS</span>
+        </div>
+        <label for="wakeSlider" class="slider-label">Minutes since he woke up: <b id="minutes">0</b></label>
+        <input type="range" id="wakeSlider" min="0" max="120" value="0" />
+        <p class="mood-title" id="moodTitle">DANGER ZONE</p>
+        <p class="mood-text" id="moodText">Just woke up. Do not speak. Do not breathe loudly. Do not exist.</p>
+      </div>
     </div>
   </section>
 
@@ -191,8 +164,8 @@
 
   <!-- HUNT GAME -->
   <section class="section hunt" id="hunt">
-    <h2 class="section-title">The Great Hunter <span class="scribble">(bees & butterflies only)</span></h2>
-    <p class="lede">Birds and dogs get the glass treatment. But bees and butterflies? <b>Fair game.</b> Help Frost hunt: click the bugs before they get away.</p>
+    <h2 class="section-title">The Great Hunter <span class="scribble">(bees, butterflies & spiders)</span></h2>
+    <p class="lede">Birds and dogs get the glass treatment. But bees and butterflies? <b>Fair game.</b> And spiders? <b>Frost shows no mercy.</b> Help him hunt: click the critters before they get away.</p>
     <div class="hunt-grid">
       <div class="meadow" id="meadow" aria-label="Bug-chasing game">
         <div class="meadow-hud">
@@ -203,31 +176,10 @@
       </div>
       <figure class="polaroid tilt-r hunter-pic">
         <img src="assets/photos/frost-16.jpg" alt="Frost sitting on the balcony looking alert" loading="lazy" />
-        <figcaption class="caption">the hunter, waiting for a bee</figcaption>
+        <figcaption class="caption">the hunter, waiting for a bee (or a spider)</figcaption>
       </figure>
     </div>
-    <p class="note center">Note: every bug Frost catches is released immediately. He's a chaser, not a finisher.</p>
-  </section>
-
-  <!-- GRUMPY METER -->
-  <section class="section grumpy" id="grumpy">
-    <h2 class="section-title">Post-Nap Grumpy-o-Meter</h2>
-    <p class="lede">Frost has just woken up. Drag the slider to see when it's safe to approach.</p>
-    <div class="grumpy-box">
-      <div class="grumpy-photo polaroid tilt-l">
-        <img id="grumpyImg" src="assets/photos/frost-03.jpg" alt="Frost's current mood" />
-      </div>
-      <div class="grumpy-controls">
-        <div class="gauge">
-          <div class="gauge-fill" id="gaugeFill"></div>
-          <span class="gauge-label">GRUMPINESS</span>
-        </div>
-        <label for="wakeSlider" class="slider-label">Minutes since he woke up: <b id="minutes">0</b></label>
-        <input type="range" id="wakeSlider" min="0" max="120" value="0" />
-        <p class="mood-title" id="moodTitle">DANGER ZONE</p>
-        <p class="mood-text" id="moodText">Just woke up. Do not speak. Do not breathe loudly. Do not exist.</p>
-      </div>
-    </div>
+    <p class="note center">Note: bees and butterflies are released immediately. He's a chaser, not a finisher. Spiders, however, are finished.</p>
   </section>
 
   <!-- ARCHIVE -->

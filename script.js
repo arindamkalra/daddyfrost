@@ -123,20 +123,27 @@ const huntLines = [
 ];
 let caught = 0;
 const bugs = [];
-const BUG_TYPES = ["🐝", "🦋", "🐝", "🦋", "🐝"];
+const BUG_TYPES = ["🐝", "🦋", "🐝", "🦋", "🕷️", "🕷️"];
+const spiderLines = [
+  "Spider eliminated. No mercy.",
+  "SPLAT. The house is safe again.",
+  "Spider removed from the premises. Permanently.",
+  "Frost: 1. Spider: 0. Forever.",
+];
+const missLines = ["Missed! Pretending that was on purpose.", "Swipe… and miss.", "Too slow. Too floofy."];
 
 function makeBug(type) {
   const el = document.createElement("span");
   el.className = "bug";
   el.textContent = type;
   el.setAttribute("role", "button");
-  el.setAttribute("aria-label", type === "🐝" ? "bee" : "butterfly");
+  el.setAttribute("aria-label", type === "🐝" ? "bee" : type === "🦋" ? "butterfly" : "spider");
   meadow.appendChild(el);
   const w = meadow.clientWidth, h = meadow.clientHeight;
   const bug = {
     el, type,
     x: Math.random() * (w - 60),
-    y: 50 + Math.random() * (h * 0.55),
+    y: type === "🕷️" ? h * 0.6 + Math.random() * (h * 0.2) : 50 + Math.random() * (h * 0.55),
     vx: (Math.random() - 0.5) * 3,
     vy: (Math.random() - 0.5) * 3,
     t: Math.random() * 100,
@@ -153,11 +160,13 @@ function catchBug(bug, e) {
   caught++;
   caughtEl.textContent = caught;
   bugStat.textContent = caught;
-  huntMsg.textContent = huntLines[Math.floor(Math.random() * huntLines.length)];
+  const lines = bug.type === "🕷️" ? spiderLines : huntLines;
+  huntMsg.textContent = lines[Math.floor(Math.random() * lines.length)];
+  if (bug.type === "🕷️") play($("#meow3"));
   pawPrint(e);
   if (caught % 5 === 0) {
     play($("#meow2"));
-    toast(`${caught} bugs chased! Frost needs a 3-hour nap now. 💤`);
+    toast(`${caught} critters hunted! Frost needs a 3-hour nap now. 💤`);
   }
   setTimeout(() => {
     bug.el.remove();
@@ -179,7 +188,7 @@ function pawPrint(e) {
 
 meadow.addEventListener("pointerdown", (e) => {
   pawPrint(e);
-  huntMsg.textContent = ["Missed! Pretending that was on purpose.", "Swipe… and miss.", "Too slow. Too floofy."][Math.floor(Math.random() * 3)];
+  huntMsg.textContent = missLines[Math.floor(Math.random() * missLines.length)];
 });
 
 let mouse = { x: -999, y: -999 };
@@ -196,23 +205,24 @@ function animateBugs() {
     b.t += 0.05;
     // wander
     b.vx += (Math.random() - 0.5) * 0.4;
-    b.vy += (Math.random() - 0.5) * 0.4 + Math.sin(b.t) * 0.05;
+    b.vy += b.type === "🕷️" ? (Math.random() - 0.5) * 0.15 : (Math.random() - 0.5) * 0.4 + Math.sin(b.t) * 0.05;
     // flee the paw a little
     const dx = b.x + 20 - mouse.x, dy = b.y + 20 - mouse.y;
     const d = Math.hypot(dx, dy);
     if (d < 110) { b.vx += (dx / d) * 0.9; b.vy += (dy / d) * 0.9; }
     // speed limit
-    const max = b.type === "🐝" ? 3.6 : 2.6;
+    const max = b.type === "🐝" ? 3.6 : b.type === "🕷️" ? 2.2 : 2.6;
     const sp = Math.hypot(b.vx, b.vy);
     if (sp > max) { b.vx = (b.vx / sp) * max; b.vy = (b.vy / sp) * max; }
     b.x += b.vx; b.y += b.vy;
     // walls (keep above the flowers)
     if (b.x < 0) { b.x = 0; b.vx *= -1; }
     if (b.x > w - 50) { b.x = w - 50; b.vx *= -1; }
-    if (b.y < 44) { b.y = 44; b.vy *= -1; }
+    const top = b.type === "🕷️" ? h * 0.55 : 44; // spiders stay on the grass
+    if (b.y < top) { b.y = top; b.vy *= -1; }
     if (b.y > h - 100) { b.y = h - 100; b.vy *= -1; }
     const flip = b.vx < 0 ? 1 : -1;
-    const flap = b.type === "🦋" ? 1 + Math.sin(b.t * 6) * 0.12 : 1;
+    const flap = b.type === "🦋" ? 1 + Math.sin(b.t * 6) * 0.12 : b.type === "🕷️" ? 1 + Math.sin(b.t * 10) * 0.05 : 1;
     b.el.style.transform = `translate(${b.x}px, ${b.y}px) scale(${flip * flap}, ${flap})`;
   }
   requestAnimationFrame(animateBugs);
